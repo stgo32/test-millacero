@@ -41,6 +41,9 @@ export function ExploreOptionsForm({
         numOfApartments: Number(formData.numOfApartments), // Asegura tipo número
       });
       alert("Información enviada correctamente");
+
+      // Vaciar formulario
+      setFormData(initialFormState);
     } catch (error) {
       alert("Error al enviar información");
       console.error(error);
