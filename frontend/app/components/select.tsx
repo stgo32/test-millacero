@@ -27,11 +27,18 @@ interface Option {
 interface ComboboxProps {
   searchTitle: string
   options: Option[]
+  value: string
+  onChange: (val: string) => void
 }
 
-export function Combobox({ searchTitle, options }: ComboboxProps) {
+export function Combobox({ searchTitle, options, value, onChange }: ComboboxProps) {
   const [open, setOpen] = React.useState(false)
-  const [value, setValue] = React.useState("")
+
+  const handleSelect = (currentValue: string) => {
+    const newValue = currentValue === value ? "" : currentValue
+    onChange(newValue)
+    setOpen(false)
+  }
 
   return (
     <Popover open={open} onOpenChange={setOpen}>
@@ -50,17 +57,15 @@ export function Combobox({ searchTitle, options }: ComboboxProps) {
       </PopoverTrigger>
       <PopoverContent className="p-0 w-100">
         <Command>
+          <CommandInput placeholder={`Buscar ${searchTitle.toLowerCase()}...`} />
           <CommandList>
-            <CommandEmpty>No options found.</CommandEmpty>
+            <CommandEmpty>No se encontraron opciones.</CommandEmpty>
             <CommandGroup>
               {options.map((opt) => (
                 <CommandItem
                   key={opt.value}
                   value={opt.value}
-                  onSelect={(currentValue) => {
-                    setValue(currentValue === value ? "" : currentValue)
-                    setOpen(false)
-                  }}
+                  onSelect={handleSelect}
                 >
                   {opt.label}
                   <Check
