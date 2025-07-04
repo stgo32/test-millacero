@@ -53,7 +53,6 @@ export default function IndexPage() {
             </Button>
           </div>
 
-          {/* Carrusel ya con scroll y botones integrados */}
           <Carousel />
 
           <div className="flex justify-center mt-4 md:hidden">

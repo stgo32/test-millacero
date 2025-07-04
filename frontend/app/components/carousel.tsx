@@ -26,7 +26,6 @@ export function Carousel() {
 
   return (
     <>
-      {/* Contenedor del carrusel */}
       <div
         ref={carouselRef}
         className="flex flex-col md:flex-row gap-4 overflow-x-auto scroll-smooth scroll-hide px-4 justify-center md:justify-start"
@@ -38,7 +37,6 @@ export function Carousel() {
         <InfoCard icon="📱" description="Más independencia y autogestión" />
       </div>
 
-      {/* Botones switch (solo en desktop) */}
       <div className="hidden md:flex flex-row justify-start ml-6 mt-4">
         <Button
           size="sm"

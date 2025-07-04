@@ -1,10 +1,6 @@
 import {
   Card,
-  CardAction,
-  CardDescription,
   CardFooter,
-  CardHeader,
-  CardTitle,
 CardContent,
 } from "./ui/card"
 import { Button } from "./ui/button"
@@ -21,12 +17,11 @@ export function InfoCard({icon, description}: InfoCardProps) {
     <Card className="relative w-[400px] h-[60px] flex-row items-center justify-center p-2 text-left bg-secondary mr-6
                     md:h-[280px] md:w-auto md:min-w-[240px] md:max-w-[240px] md:flex-col md:items-start md:text-center md:p-4">
 
-        <Button className="order-last md:order-none md:absolute md:top-2 md:right-2 rounded-full bg-primary p-2"      >
-          <Link href="/hello-world">
-            <ArrowUpRight className="h-4 w-4 text-primary-foreground" />
-          </Link>
-        </Button>
-
+      <Button className="order-last md:order-none md:absolute md:top-2 md:right-2 rounded-full bg-primary p-2"      >
+        <Link href="/hello-world">
+          <ArrowUpRight className="h-4 w-4 text-primary-foreground" />
+        </Link>
+      </Button>
 
       <CardContent className="flex-1 flex items-center gap-2 p-0 md:flex-col md:items-center md:justify-center md:text-center">
         <div className="text-3xl md:text-6xl md:mb-2">{icon}</div>

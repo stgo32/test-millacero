@@ -38,11 +38,10 @@ export function ExploreOptionsForm({
     try {
       await axios.post(`${url}/send-info`, {
         ...formData,
-        numOfApartments: Number(formData.numOfApartments), // Asegura tipo número
+        numOfApartments: Number(formData.numOfApartments),
       });
       alert("Información enviada correctamente");
 
-      // Vaciar formulario
       setFormData(initialFormState);
     } catch (error) {
       alert("Error al enviar información");

@@ -85,3 +85,8 @@ frontend/
 El formulario se coecta al backend, al enviar información se guarda en la base de datos y al cargar información se carga lo último enviado.
 
 El componente faltante contiene las casillas que se reordenan como fue pedido y al presionar las flechas lleva a una página hello world.
+
+## Referencias Bibliográficas
+
+- El framework de estilo corresponde a [text](https://ui.shadcn.com/)
+- La fotografía de la persona es una persona random obtenida de [text](https://randomuser.me)
