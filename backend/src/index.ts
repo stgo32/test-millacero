@@ -9,7 +9,7 @@ app.use(bodyParser());
 app.use(formRoutes.routes());
 app.use(formRoutes.allowedMethods());
 
-const PORT = 3000;
+const PORT = 3001;
 
 sequelize.sync().then(() => {
   app.listen(PORT, () => {
