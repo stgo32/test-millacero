@@ -8,6 +8,8 @@ import { Switch } from "./components/ui/switch"
 
 
 
+
+
 export default function IndexPage() {
   const carouselRef = useRef<HTMLDivElement>(null)
   const [activeSide, setActiveSide] = useState<"left" | "right">("left")
@@ -29,8 +31,8 @@ export default function IndexPage() {
   }
 
   return (
-    <div className="bg-secondary">
-    <div className="grid min-h-screen lg:grid-cols-2">
+    <>
+    <div className="grid min-h-screen lg:grid-cols-2 bg-secondary">
       <div className="flex flex-col justify-center items-center px-10">
         <div className="max-w-md text-center lg:text-left">
           <h2 className="text-4xl font-bold text-gray-900 mb-6">
@@ -98,8 +100,8 @@ export default function IndexPage() {
         <Button             size="sm"
             className={`mr-2 ${
               activeSide === "left"
-                ? "bg-primary text-white"
-                : "bg-muted text-gray-400"
+                ? "bg-primary"
+                : "bg-secondary"
             }`}
             onClick={() => handleScroll("left")} >
         </Button>
@@ -107,14 +109,14 @@ export default function IndexPage() {
             size="sm"
             className={`mr-2 ${
               activeSide === "right"
-                ? "bg-primary text-white"
-                : "bg-muted text-gray-400"
+                ? "bg-primary"
+                : "bg-secondary"
             }`}
             onClick={() => handleScroll("right")}>
         </Button>
       </div>
     </div>
 
-    </div>
+    </>
   )
 }
